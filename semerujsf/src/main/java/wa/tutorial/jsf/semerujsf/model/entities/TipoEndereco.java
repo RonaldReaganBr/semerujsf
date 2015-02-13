@@ -56,6 +56,15 @@ public class TipoEndereco implements Serializable{
     public void setNomeTipoEndereco(String descricaoTipoEndereco) {
         this.descricaoTipoEndereco = descricaoTipoEndereco;
     }
+    
+    
+    public List<Endereco> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
+    }
 
     @Override
     public int hashCode() {

@@ -57,6 +57,17 @@ public class Estado implements Serializable{
         this.nomeEstado = nomeEstado;
     }
 
+    public List<Endereco> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
+    }
+
+    
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;

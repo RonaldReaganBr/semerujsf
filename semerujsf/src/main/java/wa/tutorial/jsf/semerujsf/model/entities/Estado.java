@@ -35,7 +35,7 @@ public class Estado implements Serializable{
     private String nomeEstado;
 
     @OneToMany
-    @ForeignKey(name="estadoEndereco")
+    @ForeignKey(name="EnderecoEstado")
     private List<Endereco> enderecos;
     
     public Estado() {

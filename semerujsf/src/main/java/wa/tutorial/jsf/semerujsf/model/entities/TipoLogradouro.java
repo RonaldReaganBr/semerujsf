@@ -35,7 +35,7 @@ public class TipoLogradouro implements Serializable{
     private String descricaoTipoLogradouro;
 
     @OneToMany
-    @ForeignKey(name="tipoLogradouroEndereco")
+    @ForeignKey(name="EnderecoTipoLogradouro")
     private List<Endereco> enderecos;
     
     public TipoLogradouro() {

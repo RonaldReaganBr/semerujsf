@@ -13,7 +13,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.Column;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import org.hibernate.annotations.ForeignKey;
 /**
@@ -53,9 +56,14 @@ public class Pessoa {
     private Date dataCadastro;
 
     
+    @OneToOne(mappedBy = "pessoa", fetch = FetchType.LAZY)
+    @ForeignKey(name = "EnderecoPessoa")
+    private Endereco endereco;
+    
     @ManyToOne(optional = false)
     @ForeignKey(name="PessoaSexo")
-    private Pessoa pessoa;
+    @JoinColumn(name="idSexo", referencedColumnName = "idSexo")
+    private Sexo sexo;
     
     
     public Pessoa() {
@@ -117,6 +125,26 @@ public class Pessoa {
         this.dataCadastro = dataCadastro;
     }
 
+    public Sexo getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(Sexo sexo) {
+        this.sexo = sexo;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    
+    
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;

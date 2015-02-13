@@ -13,7 +13,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.Column;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
+import org.hibernate.annotations.ForeignKey;
 /**
  *
  * @author Taw
@@ -50,6 +52,12 @@ public class Pessoa {
     @Column(name="dataCadastro",nullable=false)
     private Date dataCadastro;
 
+    
+    @ManyToOne(optional = false)
+    @ForeignKey(name="PessoaSexo")
+    private Pessoa pessoa;
+    
+    
     public Pessoa() {
     }
 
